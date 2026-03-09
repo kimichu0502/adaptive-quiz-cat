@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MiniCAT Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <p>Final estimated ability: {{ ability }}</p>
+    <p>Estimated level: {{ level }}</p>
+
+    <h2>Question History</h2>
+    <ul>
+        {% for item in history %}
+            <li>
+                <strong>{{ item.question_text }}</strong><br>
+                Your answer: {{ item.selected }}<br>
+                Correct answer: {{ item.correct_answer }}<br>
+                Correct? {{ item.is_correct }}<br>
+                Difficulty: {{ item.difficulty }}
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Try Again</a>
+</body>
+</html>
