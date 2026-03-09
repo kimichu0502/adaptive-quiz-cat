@@ -56,10 +56,14 @@ def quiz():
 
         is_correct = (selected == question["answer"])
 
+        difficulty = question["difficulty"]
+
         if is_correct:
-            ability += ABILITY_STEP
+            ability += ABILITY_STEP * (1 + difficulty)
         else:
-            ability -= ABILITY_STEP
+            ability -= ABILITY_STEP * (1 - difficulty)
+
+        ability = max(-2, min(2, ability))
 
         history.append({
             "question_text": question["text"],

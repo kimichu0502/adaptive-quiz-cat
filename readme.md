@@ -6,7 +6,7 @@ The system adapts the difficulty of questions based on the user's estimated abil
 ## Features
 
 - Adaptive question selection based on user performance
-- Ability estimate that updates after each answer
+- The ability update is weighted by question difficulty to better approximate adaptive testing behavior.
 - Multiple-choice quiz interface
 - Question history and results summary
 - Simple and clean web interface
