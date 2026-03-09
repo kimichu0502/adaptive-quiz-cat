@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MiniCAT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>MiniCAT</h1>
+
+<p>
+A small adaptive quiz prototype inspired by computerized adaptive testing.
+</p>
+
+<form method="POST" action="/start">
+    <button type="submit">Start Quiz</button>
+</form>
+
+</div>
+
+</body>
+</html>

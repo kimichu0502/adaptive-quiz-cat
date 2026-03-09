@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="results-page">
+    <div class="container">
+        <h1>Your Results</h1>
+
+        <p>Final estimated ability: <strong>{{ ability }}</strong></p>
+        <p>Level: <strong>{{ level }}</strong></p>
+
+        <h2>Question History</h2>
+
+        {% for item in history %}
+        <div class="result-box">
+            <p><strong>{{ item.question_text }}</strong></p>
+
+            <p>Your answer: {{ item.selected }}</p>
+
+            {% if item.is_correct %}
+                <p class="correct-text">Correct</p>
+            {% else %}
+                <p>Correct answer: {{ item.correct_answer }}</p>
+                <p class="incorrect-text">Incorrect</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <a href="{{ url_for('home') }}">
+            <button>Try Again</button>
+        </a>
+    </div>
+</body>
+</html>
